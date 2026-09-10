@@ -8,9 +8,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Ateb Manager">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="manifest" href="manifest.webmanifest?v=2">
+  <link rel="icon" type="image/png" href="icon.png?v=2">
   <title>Ateb Manager</title>
   <style>
     html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#4b285c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
@@ -23,11 +23,11 @@
 </head>
 <body>
   <iframe id="manager" title="Ateb Service Manager" src="https://script.google.com/macros/s/AKfycbz8C4S5ibTg1YcGOb_badDKXjZKIUHVzJuA7T9ofvQ3cSjCEf1e92bIxiU0Oo7oS4DX/exec" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  <div id="loading"><div><img src="icon.png" alt=""><h1>Ateb Manager</h1><p>Opening Fire Safety Direct service management…</p></div></div>
+  <div id="loading"><div><img src="icon.png?v=2" alt="Ateb Manager"><h1>Ateb Manager</h1><p>Opening Fire Safety Direct service management…</p></div></div>
   <script>
     const frame=document.getElementById('manager');
     frame.addEventListener('load',()=>setTimeout(()=>document.getElementById('loading').classList.add('done'),350));
-    if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+    if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=2').catch(()=>{}));}
   </script>
 </body>
 </html>
