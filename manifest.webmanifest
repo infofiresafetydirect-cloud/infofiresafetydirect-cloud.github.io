@@ -1,0 +1,17 @@
+{
+  "name": "Ateb Service Manager",
+  "short_name": "Ateb Manager",
+  "description": "Fire Safety Direct Ateb service management",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#4b285c",
+  "theme_color": "#4b285c",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
