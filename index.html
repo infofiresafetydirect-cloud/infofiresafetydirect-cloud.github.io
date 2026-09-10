@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4b285c">
+  <meta name="application-name" content="Ateb Manager">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ateb Manager">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.png">
+  <title>Ateb Manager</title>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#4b285c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    #manager{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
+    #loading{position:fixed;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:#4b285c;color:white;text-align:center;transition:opacity .25s}
+    #loading.done{opacity:0;pointer-events:none}
+    #loading img{width:112px;height:112px;border-radius:24px;box-shadow:0 12px 32px rgba(0,0,0,.22);margin-bottom:16px}
+    #loading h1{margin:0 0 6px;font-size:24px}#loading p{margin:0;color:#ebe5ef;font-size:14px}
+  </style>
+</head>
+<body>
+  <iframe id="manager" title="Ateb Service Manager" src="https://script.google.com/macros/s/AKfycbz8C4S5ibTg1YcGOb_badDKXjZKIUHVzJuA7T9ofvQ3cSjCEf1e92bIxiU0Oo7oS4DX/exec" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <div id="loading"><div><img src="icon.png" alt=""><h1>Ateb Manager</h1><p>Opening Fire Safety Direct service management…</p></div></div>
+  <script>
+    const frame=document.getElementById('manager');
+    frame.addEventListener('load',()=>setTimeout(()=>document.getElementById('loading').classList.add('done'),350));
+    if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+  </script>
+</body>
+</html>
